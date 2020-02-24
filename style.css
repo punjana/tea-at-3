@@ -1,0 +1,125 @@
+body {
+    font-family: 'Lato', sans-serif;
+    color: #fff;
+    background: #8A2387;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F27121, #E94057, #8A2387);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F27121, #E94057, #8A2387); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */       
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.clockbox, #clock {
+    height: 450px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Clock styles */
+.circle {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 5;
+    stroke-miterlimit: 10;
+    opacity: 0.6;
+
+}
+
+.mid-circle {
+    fill: #fff;
+    opacity: 0;
+}
+.hour-marks {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 5;
+    stroke-miterlimit: 10;
+    opacity: 0.6;
+}
+
+.hour-arm {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 8;
+    stroke-miterlimit: 10;
+    opacity: 0.6;
+}
+
+.minute-arm {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 5;
+    stroke-miterlimit: 10;
+    opacity: 0.6;
+}
+
+.second-arm {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    opacity: 0.6;
+}
+
+/* Transparent box ensuring arms center properly. */
+.sizing-box {
+    fill: none;
+}
+
+/* Make all arms rotate around the same center point. */
+#hour,
+#minute,
+#second {
+    transform-origin: 300px 300px;
+    transition: transform .5s ease-in-out;
+}
+
+.font-box h1 {
+
+    font-size: 3em;
+    text-align: center;
+}
+
+.party-time {
+
+    background: linear-gradient(to right, #fff 10%, #8A2387 50%, #fff 60%);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 1s linear infinite;
+}
+
+@keyframes textclip {
+	to {
+		background-position: 200% center;
+	}
+}
+
+
+/* Mobile */
+
+@media (max-width: 48rem) {
+
+    .main {
+        height: 60vh;
+    }
+
+    .clockbox, #clock  {
+        height: 300px;
+    }
+
+    .font-box h1 {
+        font-size: 1.5em;
+    }
+}
